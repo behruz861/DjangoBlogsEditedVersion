@@ -1,0 +1,7 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.text }}</p>
+<p>Likes: {{ post.likes }}</p>
+<form method="post" action="{% url 'like_post' pk=post.pk %}">
+    {% csrf_token %}
+    <button type="submit">Like</button>
+</form>
